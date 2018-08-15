@@ -9,6 +9,7 @@ const loc = require('./util/location.js')
 
 const app = express()
 
+<<<<<<< HEAD
 app.use(
   require('express-session')({
     secret: 'repalceByRightkey@110',
@@ -35,6 +36,16 @@ app.get('/api/logout', utils.logout);
 app.post('/api/signup', utils.signup)
 
 app.get('/api/event', utils.checkLoggedIn, function(req, res) {
+=======
+app.use(bodyParser.json())
+app.use(express.static(`${__dirname}/../client/dist`))
+
+app.get('/*', function(req, res) {
+  res.redirect('/');
+});
+
+app.get('/api/home', function (req, res) {
+>>>>>>> Changed database structure
   res.send('Server running')
 });
 
