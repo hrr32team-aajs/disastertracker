@@ -16,15 +16,22 @@ app.get('/api/', function (req, res) {
   res.send('Server running')
 });
 
-app.get('/api/event');
+app.get('/api/event', function(req, res) {
+  .then())
 
-app.get('/api/location');
+app.get('/api/location', function(req, res) {
+  .then())
 
-app.get('/api/user'); //include user location, array of locations.
+//include user location, array of locations.
+app.get('/api/user', function(req, res) {
+  .then())
 
-app.post('/api/user');
+app.post('/api/user', function(req, res) {
+  .then())
 
-app.put('/api/user');
+app.put('/api/user', function(req, res) {
+  .then()
+});
 
 app.delete('/api/user');
 
