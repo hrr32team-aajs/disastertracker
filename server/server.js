@@ -6,10 +6,13 @@ const log = require('ololog')
 const app = express()
 
 app.use(bodyParser.json())
-
 app.use(express.static(`${__dirname}/../client/dist`))
 
-app.get('/', function (req, res) {
+app.get('/*', function(req, res) {
+  res.redirect('/');
+});
+
+app.get('/api/home', function (req, res) {
   res.send('Server running')
 });
 
@@ -19,8 +22,8 @@ app.put('/api/user');
 
 app.delete('/api/user');
 
-const PORT = process.env.PORT || 3000
+const port = process.env.PORT || 3000
 
-app.listen(PORT, function () {
-  log(`Application listening on port ${PORT}`)
+app.listen(PORT, function() {
+  log(`Application listening on port ${port}`)
 })
