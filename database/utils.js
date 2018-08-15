@@ -180,7 +180,7 @@ exports.getUser = (username) => {
 
 //export saves event to database input fields are ()
 exports.saveEvent = event => {
-    Promise({function (resolve, reject) {
+    new Promise({function (resolve, reject) {
         new Event({event_name: event.event_name }).fetch().then(save => (save ? reject() : Events.create(event).then(resolve)));
     }})
 }

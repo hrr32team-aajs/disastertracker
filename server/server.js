@@ -9,7 +9,6 @@ const loc = require('./util/location.js')
 
 const app = express()
 
-<<<<<<< HEAD
 app.use(
   require('express-session')({
     secret: 'repalceByRightkey@110',
@@ -21,7 +20,7 @@ app.use(
 app.use(bodyParser.json())
 app.use(express.static(`${__dirname}/../client/dist`))
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
   res.redirect('/');
 });
 
@@ -35,17 +34,7 @@ app.get('/api/logout', utils.logout);
 
 app.post('/api/signup', utils.signup)
 
-app.get('/api/event', utils.checkLoggedIn, function(req, res) {
-=======
-app.use(bodyParser.json())
-app.use(express.static(`${__dirname}/../client/dist`))
-
-app.get('/*', function(req, res) {
-  res.redirect('/');
-});
-
-app.get('/api/home', function (req, res) {
->>>>>>> Changed database structure
+app.get('/api/event', utils.checkLoggedIn, function (req, res) {
   res.send('Server running')
 });
 
@@ -60,11 +49,11 @@ app.delete('/api/location', utils.checkLoggedIn, loc.deleteLocation);
 //include user location, array of locations.
 app.get('/api/user', utils.checkLoggedIn, user.userLocation);
 
-app.post('/api/user', utils.checkLoggedIn, function(req, res) {
+app.post('/api/user', utils.checkLoggedIn, function (req, res) {
   res.send('Server running')
 });
 
-app.put('/api/user', utils.checkLoggedIn, function(req, res) {
+app.put('/api/user', utils.checkLoggedIn, function (req, res) {
   res.send('Server running')
 });
 
@@ -72,6 +61,6 @@ app.delete('/api/user');
 
 const port = process.env.PORT || 3000
 
-app.listen(port, function() {
+app.listen(port, function () {
   log(`Application listening on port ${port}`)
 })
