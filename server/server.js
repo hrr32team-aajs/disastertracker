@@ -12,11 +12,17 @@ app.get('/*', function(req, res) {
   res.redirect('/');
 });
 
-app.get('/api/home', function (req, res) {
+app.get('/api/', function (req, res) {
   res.send('Server running')
 });
 
-app.get('/api/user');
+app.get('/api/event');
+
+app.get('/api/location');
+
+app.get('/api/user'); //include user location, array of locations.
+
+app.post('/api/user');
 
 app.put('/api/user');
 
@@ -24,6 +30,6 @@ app.delete('/api/user');
 
 const port = process.env.PORT || 3000
 
-app.listen(PORT, function() {
+app.listen(port, function() {
   log(`Application listening on port ${port}`)
 })
