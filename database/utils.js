@@ -46,3 +46,6 @@ exports.saveLocation = location =>
     new Promise(function (resolve, reject) {
         new Location({contact: contact.location_coordinates }).fetch().then(save => (save ? reject() : Locations.create(location).then(resolve)));
     })
+
+
+    
