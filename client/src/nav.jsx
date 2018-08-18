@@ -30,7 +30,6 @@ export default class Nav extends React.Component {
       loginFormOpen: false,
       signUpFormOpen: false
     }
-    //
   }
 
   render () {
