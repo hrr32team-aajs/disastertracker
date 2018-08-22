@@ -36,6 +36,7 @@ exports.getUser = (id, cb) => {
     })
 }
 
+<<<<<<< HEAD
 exports.getUserInfo = (email, cb) => {
   new User({ email: email })
     .fetch()
@@ -76,6 +77,26 @@ exports.getUserLoc = (id, cb) => {
     .catch(function (error) {
       console.log('we got an error: ', error)
     })
+=======
+exports.getUserInfo = email =>
+  new Promise(function (resolve, reject) {
+    new User({
+      email: email })
+      .fetch()
+      .then(found => (found ? resolve(found.attributes) : reject()));
+  });
+
+//By default bookshelf use promises
+exports.getUserLoc = (id, cb) => {
+  new User({'user_id': id})
+  .fetch({withRelated: ['location']})
+  .then(function(model) {
+    cb(model.related('location').toJSON());
+  })
+  .catch(function(error){
+    console.log("we got an error: ", error);
+  });
+>>>>>>> changes
 }
 
 // export saves event to database input fields are (event_name: event_name)
@@ -141,6 +162,7 @@ exports.deleteLocation = (locID, userID, cb) => {
 // export saves category to database input fields are (event_name: event_name),
 // this table holds the different categories of events, it does not hold the event information just the event itself
 exports.saveCategory = category =>
+<<<<<<< HEAD
   new Promise(function (resolve, reject) {
     new Category({ event_name: event.event_name })
       .fetch()
@@ -150,6 +172,13 @@ exports.saveCategory = category =>
   })
 
 // export saves coordinates to database (e.g - [[[12312.098109238210, 12932.100981239012]]])
+=======
+    new Promise(function (resolve, reject) {
+        new Category({event_name: event.event_name }).fetch().then(save => (save ? reject() : Categories.create(category).then(resolve)));
+    })
+
+//export saves coordinates to database (e.g - [[[12312.098109238210, 12932.100981239012]]])
+>>>>>>> changes
 // exports.saveLocation = location =>
 //   new Promise(function (resolve, reject) {
 //     new Location({
