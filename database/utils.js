@@ -82,7 +82,7 @@ exports.getEvents = user =>
     .then(found => found ? resolve(JSON.parse(JSON.stringify(found.stringify(found.related('events')))) : reject()));
   })
 
-  
+
 // export saves contact to database
 exports.saveContact = contact =>
   new Promise(function (resolve, reject) {
