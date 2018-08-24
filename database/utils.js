@@ -36,48 +36,6 @@ exports.getUser = (id, cb) => {
     })
 }
 
-<<<<<<< HEAD
-exports.getUserInfo = (email, cb) => {
-  new User({ email: email })
-    .fetch()
-    .then(function (model) {
-      let userData = model.attributes
-      // console.log(`getUserInfo for email ${email} returned `, userData)
-      Location.query(query => query.where('user_id', '=', userData.user_id))
-        .fetchAll()
-        .then(locations => {
-          let locationArray = locations.map(location => location.attributes)
-          // console.log(`getUserInfo fetchall locations returned `, locationArray)
-          userData.locations = locationArray
-          cb(userData)
-        })
-    })
-    .catch(function (error) {
-      console.log('we got an error: ', error)
-    })
-}
-
-// By default bookshelf use promises
-exports.getUserLoc = (id, cb) => {
-  new User({ user_id: id })
-    .fetch()
-    .then(function (model) {
-      Location.query(function (query) {
-        query.where('user_id', '=', id)
-      })
-        .fetchAll()
-        .then(function (result) {
-          model.location = result
-          cb(model)
-        })
-        .catch(function (error) {
-          console.log(error)
-        })
-    })
-    .catch(function (error) {
-      console.log('we got an error: ', error)
-    })
-=======
 exports.getUserInfo = email =>
   new Promise(function (resolve, reject) {
     new User({
@@ -96,7 +54,6 @@ exports.getUserLoc = (id, cb) => {
   .catch(function(error){
     console.log("we got an error: ", error);
   });
->>>>>>> changes
 }
 
 // export saves event to database input fields are (event_name: event_name)
@@ -118,6 +75,14 @@ exports.saveEvent = event =>
       .then(save => (save ? reject() : Events.create(event).then(resolve)))
   })
 
+exports.getEvents = user =>
+  new Promise(function (resolve, reject) {
+    new User({username: user.username })
+    .fetch({withRelated: ['events']})
+    .then(found => found ? resolve(JSON.parse(JSON.stringify(found.stringify(found.related('events')))) : reject()));
+  })
+
+  
 // export saves contact to database
 exports.saveContact = contact =>
   new Promise(function (resolve, reject) {
@@ -161,24 +126,13 @@ exports.deleteLocation = (locID, userID, cb) => {
 
 // export saves category to database input fields are (event_name: event_name),
 // this table holds the different categories of events, it does not hold the event information just the event itself
-exports.saveCategory = category =>
-<<<<<<< HEAD
-  new Promise(function (resolve, reject) {
-    new Category({ event_name: event.event_name })
-      .fetch()
-      .then(
-        save => (save ? reject() : Categories.create(category).then(resolve))
-      )
-  })
 
-// export saves coordinates to database (e.g - [[[12312.098109238210, 12932.100981239012]]])
-=======
+exports.saveCategory = category =>
     new Promise(function (resolve, reject) {
         new Category({event_name: event.event_name }).fetch().then(save => (save ? reject() : Categories.create(category).then(resolve)));
     })
 
 //export saves coordinates to database (e.g - [[[12312.098109238210, 12932.100981239012]]])
->>>>>>> changes
 // exports.saveLocation = location =>
 //   new Promise(function (resolve, reject) {
 //     new Location({

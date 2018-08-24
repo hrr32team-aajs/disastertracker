@@ -2,7 +2,7 @@ const db = require('../config.js');
 
 var Category = db.Model.extend({
   tableName: 'contact',
-  hasTimeStamps: true,
-});
+  hasTimeStamps: true
+})
 
-module.exports = db.model('Category', Category);     
+module.exports = db.model('Category', Category)
