@@ -75,13 +75,20 @@ exports.saveEvent = event =>
       .then(save => (save ? reject() : Events.create(event).then(resolve)))
   })
 
+// exports.getEvents = user =>
+//   new Promise(function (resolve, reject) {
+//     new User({username: user.username })
+//     .fetch({withRelated: ['events']})
+//     .then(found => found ? resolve(JSON.parse(JSON.stringify(found.stringify(found.related('events'))) : reject())));
+//   })
+
 exports.getEvents = user =>
   new Promise(function (resolve, reject) {
-    new User({username: user.username })
-    .fetch({withRelated: ['events']})
-    .then(found => found ? resolve(JSON.parse(JSON.stringify(found.stringify(found.related('events')))) : reject()));
+    new User({
+      username: user.username
+    }).fetch({withRelated: ['events']})
+      .then(found => found ? resolve(JSON.stringify(found.stringify(found.related('events')))) : reject())
   })
-
 
 // export saves contact to database
 exports.saveContact = contact =>
