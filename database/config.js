@@ -16,6 +16,20 @@ var db = require('bookshelf')(knex);
 
 db.plugin('registry');
 
+<<<<<<< HEAD
+=======
+db.knex.schema.hasTable('friends_list').then(function(exists) {
+    if (!exists) {
+        db.knex.schema.createTable('friends_list', function(friend) {
+            friend.integer('user_id');
+            friend.string('name')
+        }).then(function(table) {
+            console.log(`${table} created`)
+        })
+    }
+});
+
+>>>>>>> server side changes
 db.knex.schema.hasTable('user').then(function(exists) {
     if (!exists) {
         db.knex.createTable('user', function(user) {

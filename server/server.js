@@ -1,8 +1,10 @@
 const express = require('express')
+const request = require('request')
 const session = require('express-session')
 const bodyParser = require('body-parser')
 const path = require('path')
 const log = require('ololog')
+const events = require('./util/location.js')
 const utils = require('./helper.js')
 const user = require('./util/users.js')
 const loc = require('./util/location.js')
@@ -23,6 +25,8 @@ app.use(express.static(`${__dirname}/../client/dist`))
 app.get('/', function (req, res) {
   res.redirect('/');
 });
+
+app.get('/', utils.events);
 
 app.get('/api/', function (req, res) {
   res.send('Server running')
