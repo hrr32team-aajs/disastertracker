@@ -14,7 +14,7 @@ export default class Nav extends React.Component {
 
   render () {
     return (
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           <Grid container direction="row" justify="space-between" alignItems="center">
             <Grid item xs={6}>
