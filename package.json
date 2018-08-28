@@ -72,6 +72,7 @@
     "mysql": "^2.16.0",
     "nodemon": "^1.18.3",
     "style-loader": "^0.22.1",
+    "styled-components": "^3.4.5",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0"
   }
