@@ -99,4 +99,8 @@ db.knex.schema.hasTable('category').then(function(exists) {
     }
 });
 
+<<<<<<< HEAD
 module.exports = db;
+=======
+module.exports = db;
+>>>>>>> fixed rebase bug change

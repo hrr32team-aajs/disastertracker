@@ -5,5 +5,4 @@ const LocationEvent = db.Model.extend({
   hasTimeStamps: true,
 });
 
-
 module.exports = db.model('LocationEvent', LocationEvent);
