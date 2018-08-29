@@ -41,7 +41,10 @@
     "react-facebook-login": "^4.0.1",
     "react-google-login": "^3.2.1",
     "react-map-gl": "^3.3.4",
-    "react-select": "^2.0.0"
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-select": "^2.0.0",
+    "request": "^2.88.0"
   },
   "devDependencies": {
     "enzyme": "^3.5.0",
@@ -69,6 +72,7 @@
     "mysql": "^2.16.0",
     "nodemon": "^1.18.3",
     "style-loader": "^0.22.1",
+    "styled-components": "^3.4.5",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0"
   }

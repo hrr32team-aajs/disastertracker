@@ -9,5 +9,4 @@ const Event = db.Model.extend({
     }
 });
 
-
 module.exports = db.model('Event', Event);
