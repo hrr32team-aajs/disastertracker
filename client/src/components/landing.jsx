@@ -18,7 +18,8 @@ class Landing extends Component {
       </section>
       <div id="about">
         <h4>About</h4>
-        <p>Lorem ipsum dolor sit amet, regione similique eos an. Eu quo vero everti. Eripuit omittantur has ut, id his aliquam lucilius. Est ornatus volutpat ut, sed an iracundia definiebas appellantur. Mel aeque fabulas gubergren ei, te nec diceret maiorum. His ei probo legere nusquam. His no inermis incorrupte argumentum. At vero suavitate intellegebat pri, sit mollis phaedrum conclusionemque in, nonumy maiestatis ad duo. Mel aeque fabulas gubergren ei, te nec diceret maiorum. His ei probo legere nusquam. His no inermis incorrupte argumentum.</p>
+        <img id="example" src='./assets/example.png' />
+        <p>There are applications out there that will allow you to look up weather but none that will notify you for the many different locations this world has to offer. With Disaster tracker, add locations for friends and family members when there is any major inclement weather happening anywhere near them, even when the user is not logged in. Rest easier with Disaster tracker, it has your back! </p>
       </div>
       <div id="feature-list">
       <h4>Feature List</h4>
@@ -29,9 +30,9 @@ class Landing extends Component {
       </ul>
       </div>
       <div id="footer">
-      {/* <div class="sticky-footer">
+      <div class="sticky-footer">
         Powered by @team-disaster
-      </div> */}
+      </div>
       </div>
       </div>
     )

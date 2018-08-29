@@ -38,6 +38,7 @@ export default class Login extends React.Component {
       }
     }
     this.postToServer(combinedUserData, (err, resp) => {
+      // console.log(combinedUserData);
       if (err) {
         this.setState({ error: 'Incorrect username or password!' })
       } else {
@@ -99,6 +100,9 @@ export default class Login extends React.Component {
         </Grid>
         <Grid item xs={3}>
           <LoginGoogle clickHandler={this.handleLoginClick} className="loginGoogleButton"/>
+        </Grid>
+        <Grid item xs={3}>
+          <LoginFacebook clickHandler={this.handleLoginClick} className="loginFacebookButton"/>
         </Grid>
         <Grid item xs={3}>
           <Button
