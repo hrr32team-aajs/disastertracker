@@ -16,8 +16,6 @@ var db = require('bookshelf')(knex);
 
 db.plugin('registry');
 
-<<<<<<< HEAD
-=======
 db.knex.schema.hasTable('friends_list').then(function(exists) {
     if (!exists) {
         db.knex.schema.createTable('friends_list', function(friend) {
@@ -29,7 +27,6 @@ db.knex.schema.hasTable('friends_list').then(function(exists) {
     }
 });
 
->>>>>>> server side changes
 db.knex.schema.hasTable('user').then(function(exists) {
     if (!exists) {
         db.knex.createTable('user', function(user) {
@@ -99,8 +96,4 @@ db.knex.schema.hasTable('category').then(function(exists) {
     }
 });
 
-<<<<<<< HEAD
 module.exports = db;
-=======
-module.exports = db;
->>>>>>> fixed rebase bug change
