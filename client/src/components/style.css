@@ -19,9 +19,17 @@ body {
     font-size: 1.5em;
 }
 
+#about {
+  padding: 10px;
+}
+
+#feature-list {
+  padding: 10px;
+}
+
 .sticky-footer {
   background: #e5e5e5;
-  position: fixed;
+  position: static;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -30,4 +38,11 @@ body {
   border-top: 1px solid #e5e5e5;
   z-index: 10;
   transform: translateZ(0);
+}
+#example {
+  float:left;
+  max-width: 30em;
+  max-height: 30em;
+  margin-right: 10px;
+  position:static;
 }
