@@ -77,6 +77,16 @@ const signup = (req, res) => {
 const checkLoggedIn = (req, res, next) =>
   req.session.user ? next() : res.status(401).send('user not logged in')
 
+
+const events = (req, res) => {
+  db.saveEvent(req.body)
+  .then(user => {
+    console.log(req.body)
+  })
+}
+
+exports.events = events;
+
 exports.login = login
 exports.logout = logout
 exports.signup = signup

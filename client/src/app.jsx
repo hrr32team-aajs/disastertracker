@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-// import { BrowserRouter } from 'react-router-dom'
 import axios from 'axios'
 import Nav from './Nav.jsx'
 import Body from './Body.jsx'
+import './components/style.css';
 
 class App extends React.Component {
   constructor (props) {
@@ -107,8 +107,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render((
-  // <BrowserRouter>
-  <App />
-  // </BrowserRouter>
-), document.getElementById('app'))
+ReactDOM.render(( <App /> ), document.getElementById('app'))
